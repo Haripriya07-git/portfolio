@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hari Priya's Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #d1c4e9, #b39ddb, #9575cd);
+      background: linear-gradient(135deg, #b8b8b8, #e6e6e6, #dcdcdc);
       color: #333;
-      background-attachment: fixed;
-      background-size: cover;
     }
 
+    /* Header Styles */
     header {
       text-align: center;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -26,141 +26,205 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 3px solid #9575cd;
+      border: 4px solid #6c757d;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    header img:hover {
+      transform: scale(1.2);
     }
 
     header h1 {
-      margin: 10px 0 5px;
-      font-size: 2.5em;
-      color: #4a148c;
+      color: #495057;
+      margin-top: 15px;
+      font-size: 2.8em;
     }
 
     header p {
       font-size: 1.2em;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      margin: 10px 0;
+    /* Navigation Styles */
+    nav {
+      background-color: black;
     }
 
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #4a148c;
+    nav a {
+      color: white !important;
       font-weight: bold;
+      text-decoration: none;
     }
 
-    section {
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
+    nav a:hover {
+      color: red !important;
+      text-decoration: underline;
+    }
+
+    /* Section Title */
+    .section-title {
+      color: #495057;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Section Container */
+    .section-container {
       background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    section h2 {
-      text-align: center;
-      color: #4a148c;
-      margin-bottom: 15px;
+    /* Grid Styles */
+    .skill, .hobby {
+      height: 100%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    section p, ul {
-      line-height: 1.6;
+    .skill h4, .hobby h4 {
+      margin-bottom: 10px;
+      color: #6c757d;
     }
 
-    ul {
-      padding-left: 20px;
+    .skill p, .hobby p {
+      color: #495057;
     }
 
+    /* Footer Styles */
     footer {
       text-align: center;
       padding: 10px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       margin-top: 20px;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
 
     footer p {
-      margin: 5px 0;
-      color: #4a148c;
-    }
-
-    .contact-details a {
-      text-decoration: none;
-      color: #4a148c;
-      font-weight: bold;
+      color: #495057;
+      margin: 0;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <img src="priya.jpg" alt="Hari Priya's Image">
     <h1>Hari Priya</h1>
     <p>BCA Undergraduate, 2nd Year</p>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am Hari Priya, a BCA undergraduate student currently in my 2nd year. I am passionate about learning and applying new technologies in real-world scenarios.</p>
+  <!-- About Me Section -->
+  <section id="about" class="section-container my-4">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>I am Hari Priya, a BCA undergraduate student currently in my 2nd year. I am passionate about learning and applying new technologies in real-world scenarios.</p>
+    </div>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p>I am pursuing a Bachelor of Computer Applications (BCA). My coursework involves learning fundamental programming concepts, database management, and web development.</p>
+  <!-- Education Section -->
+  <section id="education" class="section-container my-4">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p>I am pursuing a Bachelor of Computer Applications (BCA). My coursework involves learning fundamental programming concepts, database management, and web development.</p>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Front-end Development</li>
-      <li>Java</li>
-      <li>Python</li>
-    </ul>
+  <!-- Skills Section -->
+  <section id="skills" class="section-container my-4">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill h-100 text-center">
+            <h4>Front-end Development</h4>
+            <p>Building responsive and engaging interfaces.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill h-100 text-center">
+            <h4>Java</h4>
+            <p>Object-oriented programming and application development.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="skill h-100 text-center">
+            <h4>Python</h4>
+            <p>Data analysis, scripting, and automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <p>I have successfully completed multiple projects in front-end development and programming using Java and Python. I have also participated in inter-college coding competitions.</p>
+  <!-- Hobbies Section -->
+  <section id="hobbies" class="section-container my-4">
+    <div class="container">
+      <h2 class="section-title">Hobbies & Interests</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="hobby h-100 text-center">
+            <h4>Cooking</h4>
+            <p>Experimenting with recipes and creating delicious meals.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="hobby h-100 text-center">
+            <h4>Reading</h4>
+            <p>Exploring novels and technical books.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="hobby h-100 text-center">
+            <h4>Exploring Technologies</h4>
+            <p>Staying updated with tech innovations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="hobbies">
-    <h2>Hobbies and Interests</h2>
-    <ul>
-      <li>Cooking</li>
-      <li>Reading Novels</li>
-      <li>Exploring New Technologies</li>
-    </ul>
+  <!-- Contact Section -->
+  <section id="contact" class="section-container my-4">
+    <div class="container text-center">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:harivijaya1707@gmail.com">harivijaya1707@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/hari-priya-bodduluri-21a790330" target="_blank">Hari Priya LinkedIn</a></p>
+      <p>GitHub: <a href="https://github.com/Haripriya07-git" target="_blank">Haripriya07-git</a></p>
+      <p>Contact Number: 9000538379</p>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:harivijaya1707@gmail.com">harivijaya1707@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/hari-priya-bodduluri-21a790330" target="_blank">Hari Priya LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/Haripriya07-git" target="_blank">Haripriya07-git</a></p>
-    <p>Contact Number: 9000538379</p>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <p>© 2024 Hari Priya. All Rights Reserved.</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
